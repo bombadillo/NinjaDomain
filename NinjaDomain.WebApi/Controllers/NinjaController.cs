@@ -1,18 +1,25 @@
 ﻿namespace NinjaDomain.WebApi.Controllers
-{    
+{
     using System.Collections.Generic;
     using System.Web.Http;
 
     using Data.Services;
-    using Classes;
+    using Data.Interfaces;
+    using Classes;    
 
     public class NinjaController : ApiController
     {
+        private readonly IRetrieveData<Ninja> DataRetriever;
+
+        public NinjaController(IRetrieveData<Ninja> dataRetriever)
+        {
+            DataRetriever = dataRetriever;
+        }
+
         // GET api/values
         public List<Ninja> Get()
         {
-            var ninjaRepository = new DataRetriever<Ninja>();
-            return ninjaRepository.GetAll();
+            return DataRetriever.GetAll();
         }
 
         // GET api/values/5
