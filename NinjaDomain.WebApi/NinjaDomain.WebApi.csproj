@@ -273,8 +273,8 @@
       <Project>{A0D1F9A1-FF29-4DDB-812E-AE608581C384}</Project>
       <Name>NinjaDomain.Classes</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NinjaDomain.Data\NinjaDomain.Data.csproj">
-      <Project>{C7BD6413-4B0E-48BD-B254-DBC458F88E2E}</Project>
+    <ProjectReference Include="..\NinjaDomain.DataModel\NinjaDomain.Data.csproj">
+      <Project>{ff1605ae-4222-451e-8fd1-69bbc011301e}</Project>
       <Name>NinjaDomain.Data</Name>
     </ProjectReference>
   </ItemGroup>

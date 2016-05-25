@@ -5,13 +5,11 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaDomain.Classes", "NinjaDomain.Classes\NinjaDomain.Classes.csproj", "{A0D1F9A1-FF29-4DDB-812E-AE608581C384}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaDomain.DataModel", "NinjaDomain.DataModel\NinjaDomain.DataModel.csproj", "{FF1605AE-4222-451E-8FD1-69BBC011301E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaDomain.Data", "NinjaDomain.DataModel\NinjaDomain.Data.csproj", "{FF1605AE-4222-451E-8FD1-69BBC011301E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaDomain.WebApi", "NinjaDomain.WebApi\NinjaDomain.WebApi.csproj", "{40AF3348-3AA5-4C79-9434-C81E1869AA3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaDomain.WebApi.Tests", "NinjaDomain.WebApi.Tests\NinjaDomain.WebApi.Tests.csproj", "{CB4940BE-B0D8-49BC-BBED-9E12CC3350E5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaDomain.Data", "NinjaDomain.Data\NinjaDomain.Data.csproj", "{C7BD6413-4B0E-48BD-B254-DBC458F88E2E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaDomain.Data.Tests", "NinjaDomain.Data.Tests\NinjaDomain.Data.Tests.csproj", "{7C2AAD6F-4802-4E05-87F1-E542AB64874D}"
 EndProject
@@ -37,10 +35,6 @@ Global
 		{CB4940BE-B0D8-49BC-BBED-9E12CC3350E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB4940BE-B0D8-49BC-BBED-9E12CC3350E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB4940BE-B0D8-49BC-BBED-9E12CC3350E5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C7BD6413-4B0E-48BD-B254-DBC458F88E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C7BD6413-4B0E-48BD-B254-DBC458F88E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C7BD6413-4B0E-48BD-B254-DBC458F88E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C7BD6413-4B0E-48BD-B254-DBC458F88E2E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7C2AAD6F-4802-4E05-87F1-E542AB64874D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7C2AAD6F-4802-4E05-87F1-E542AB64874D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C2AAD6F-4802-4E05-87F1-E542AB64874D}.Release|Any CPU.ActiveCfg = Release|Any CPU

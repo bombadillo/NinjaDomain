@@ -1,4 +1,4 @@
-﻿namespace NinjaDomain.DataModel
+﻿namespace NinjaDomain.Data
 {
     using System.Data.Entity;
     using Classes;
