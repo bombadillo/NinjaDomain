@@ -3,14 +3,14 @@ namespace NinjaDomain.DataModel.Migrations
     using System.Data.Entity.Migrations;
     using Classes;
     using System;
-    internal sealed class Configuration : DbMigrationsConfiguration<NinjaDomain.Data.NinjaContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<NinjaDomain.Data.Contexts.NinjaContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(NinjaDomain.Data.NinjaContext context)
+        protected override void Seed(NinjaDomain.Data.Contexts.NinjaContext context)
         {
             context.Clans.AddOrUpdate(
                 c => c.Id,

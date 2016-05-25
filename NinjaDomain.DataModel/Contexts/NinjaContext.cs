@@ -1,4 +1,4 @@
-﻿namespace NinjaDomain.Data
+﻿namespace NinjaDomain.Data.Contexts
 {
     using System.Data.Entity;
     using Classes;
