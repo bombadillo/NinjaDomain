@@ -12,6 +12,7 @@ namespace NinjaDomain.WebApi.App_Start
     using Ninject.Web.Common;
     using Data.Interfaces;
     using Data.Services;
+    using Classes;
 
     public static class NinjectWebCommon 
     {
@@ -63,7 +64,7 @@ namespace NinjaDomain.WebApi.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind(typeof(IRetrieveData<>)).To(typeof(DataRetriever<>));
+            kernel.Bind(typeof(IRetrieveData<Ninja>)).To(typeof(NinjaRetriever));
         }        
     }
 }

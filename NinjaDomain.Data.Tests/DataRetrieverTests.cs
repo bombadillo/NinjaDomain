@@ -11,7 +11,7 @@
         [Fact]
         public void GetAll_ReturnsListOfNinjas()
         {
-            var sut = new DataRetriever<Ninja>();
+            var sut = new NinjaRetriever();
 
             var result = sut.GetAll();
 
