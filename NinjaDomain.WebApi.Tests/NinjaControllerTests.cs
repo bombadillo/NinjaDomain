@@ -13,10 +13,10 @@
         [Fact]
         public void Get_ReturnsListOfNinjas()
         {
-            var mockDataRetriever = new Mock<IDataRepository<Ninja>>();
-            mockDataRetriever.Setup(x => x.GetAll()).Returns(new List<Ninja>());
+            var mockDataRepository = new Mock<IDataRepository<Ninja>>();
+            mockDataRepository.Setup(x => x.GetAll()).Returns(new List<Ninja>());
 
-            var sut = new NinjaController(mockDataRetriever.Object);
+            var sut = new NinjaController(mockDataRepository.Object);
 
             var result = sut.Get();
 
@@ -26,10 +26,10 @@
         [Fact]
         public void GetOne_ReturnsNinja()
         {
-            var mockDataRetriever = new Mock<IDataRepository<Ninja>>();
-            mockDataRetriever.Setup(x => x.GetOne(It.IsAny<int>())).Returns(new Ninja());
+            var mockDataRepository = new Mock<IDataRepository<Ninja>>();
+            mockDataRepository.Setup(x => x.GetOne(It.IsAny<int>())).Returns(new Ninja());
 
-            var sut = new NinjaController(mockDataRetriever.Object);
+            var sut = new NinjaController(mockDataRepository.Object);
 
             var result = sut.Get(It.IsAny<int>());
 
@@ -39,13 +39,13 @@
         [Fact]
         public void Add_CallsRepositoryAddMethod()
         {
-            var mockDataRetriever = new Mock<IDataRepository<Ninja>>();
+            var mockDataRepository = new Mock<IDataRepository<Ninja>>();
 
-            var sut = new NinjaController(mockDataRetriever.Object);
+            var sut = new NinjaController(mockDataRepository.Object);
 
             sut.Post(It.IsAny<Ninja>());
 
-            mockDataRetriever.Verify(m => m.Add(It.IsAny<Ninja>()), Times.Once());
+            mockDataRepository.Verify(m => m.Add(It.IsAny<Ninja>()), Times.Once());
         }
     }
    

@@ -9,29 +9,29 @@
 
     public class NinjaController : ApiController
     {
-        private readonly IDataRepository<Ninja> DataRetriever;
+        private readonly IDataRepository<Ninja> NinjaRepository;
 
-        public NinjaController(IDataRepository<Ninja> dataRetriever)
+        public NinjaController(IDataRepository<Ninja> dataRepository)
         {
-            DataRetriever = dataRetriever;
+            NinjaRepository = dataRepository;
         }
 
         // GET api/values
         public List<Ninja> Get()
         {
-            return DataRetriever.GetAll();
+            return NinjaRepository.GetAll();
         }
 
         // GET api/values/5
         public Ninja Get(int id)
         {
-            return DataRetriever.GetOne(id);
+            return NinjaRepository.GetOne(id);
         }
 
         // POST api/values
         public void Post([FromBody]Ninja ninja)
         {
-            DataRetriever.Add(ninja);
+            NinjaRepository.Add(ninja);
         }
 
         // PUT api/values/5
