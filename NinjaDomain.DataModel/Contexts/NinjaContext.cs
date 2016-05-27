@@ -3,7 +3,7 @@
     using System.Data.Entity;
     using Classes;
 
-    public class NinjaContext : DbContext
+    public class NinjaContext : DbContext, INinjaContext
     {
         public DbSet<Ninja> Ninjas { get; set; }
         public DbSet<Clan> Clans { get; set; }
