@@ -29,7 +29,7 @@
         [Fact]
         public void GetAll_ReturnsListOfNinjas()
         {
-            var sut = new NinjaRetriever(MockNinjaContext.Object);
+            var sut = new NinjaRepository(MockNinjaContext.Object);
             
             var ninjas = sut.GetAll();
 
@@ -39,7 +39,7 @@
         [Fact]
         public void GetAll_WithProductsInDataSet_ReturnsCorrectNumberOfItems()
         {
-            var sut = new NinjaRetriever(MockNinjaContextWithItems.Object);
+            var sut = new NinjaRepository(MockNinjaContextWithItems.Object);
 
             var ninjas = sut.GetAll();
 
@@ -49,7 +49,7 @@
         [Fact]
         public void GetOne_WhenDataExists_ReturnsOneNinja()
         {
-            var sut = new NinjaRetriever(MockNinjaContextWithItems.Object);
+            var sut = new NinjaRepository(MockNinjaContextWithItems.Object);
 
             var ninja = sut.GetOne(1);
 

@@ -9,9 +9,9 @@
 
     public class NinjaController : ApiController
     {
-        private readonly IRetrieveData<Ninja> DataRetriever;
+        private readonly IDataRepository<Ninja> DataRetriever;
 
-        public NinjaController(IRetrieveData<Ninja> dataRetriever)
+        public NinjaController(IDataRepository<Ninja> dataRetriever)
         {
             DataRetriever = dataRetriever;
         }

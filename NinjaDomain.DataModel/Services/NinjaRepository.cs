@@ -7,11 +7,11 @@
     using Classes;
     using Contexts;
 
-    public class NinjaRetriever : IRetrieveData<Ninja>
+    public class NinjaRepository : IDataRepository<Ninja>
     {
         private readonly INinjaContext NinjaContext;
 
-        public NinjaRetriever(INinjaContext ninjaContext)
+        public NinjaRepository(INinjaContext ninjaContext)
         {
             NinjaContext = ninjaContext;
         }

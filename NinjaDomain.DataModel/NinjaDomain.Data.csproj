@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexts\INinjaContext.cs" />
-    <Compile Include="Interfaces\IRetrieveData.cs" />
+    <Compile Include="Interfaces\IDataRepository.cs" />
     <Compile Include="Migrations\201605251957395_Initial.cs" />
     <Compile Include="Migrations\201605251957395_Initial.Designer.cs">
       <DependentUpon>201605251957395_Initial.cs</DependentUpon>
@@ -80,7 +80,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Contexts\NinjaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\NinjaRetriever.cs" />
+    <Compile Include="Services\NinjaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -13,7 +13,7 @@
         [Fact]
         public void Get_ReturnsListOfNinjas()
         {
-            var mockDataRetriever = new Mock<IRetrieveData<Ninja>>();
+            var mockDataRetriever = new Mock<IDataRepository<Ninja>>();
             mockDataRetriever.Setup(x => x.GetAll()).Returns(new List<Ninja>());
 
             var sut = new NinjaController(mockDataRetriever.Object);
@@ -26,7 +26,7 @@
         [Fact]
         public void GetOne_ReturnsNinja()
         {
-            var mockDataRetriever = new Mock<IRetrieveData<Ninja>>();
+            var mockDataRetriever = new Mock<IDataRepository<Ninja>>();
             mockDataRetriever.Setup(x => x.GetOne(It.IsAny<int>())).Returns(new Ninja());
 
             var sut = new NinjaController(mockDataRetriever.Object);

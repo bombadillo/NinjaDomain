@@ -65,7 +65,7 @@ namespace NinjaDomain.WebApi.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind(typeof(IRetrieveData<Ninja>)).To(typeof(NinjaRetriever));
+            kernel.Bind(typeof(IDataRepository<Ninja>)).To(typeof(NinjaRepository));
             kernel.Bind(typeof(INinjaContext)).To(typeof(NinjaContext));
         }        
     }

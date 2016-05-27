@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public interface IRetrieveData<T>
+    public interface IDataRepository<T>
     {
         List<T> GetAll();
         T GetOne(int id);
