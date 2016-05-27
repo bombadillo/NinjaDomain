@@ -20,5 +20,11 @@
         {
             return NinjaContext.Ninjas.ToList();
         }
+
+
+        public Ninja GetOne(int id)
+        {
+            return NinjaContext.Ninjas.FirstOrDefault(x => x.Id == id);
+        }
     }
 }

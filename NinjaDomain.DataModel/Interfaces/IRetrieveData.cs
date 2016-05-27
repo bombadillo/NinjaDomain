@@ -5,5 +5,6 @@
     public interface IRetrieveData<T>
     {
         List<T> GetAll();
+        T GetOne(int id);
     }
 }

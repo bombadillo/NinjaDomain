@@ -11,7 +11,7 @@
     using Contexts;
     using System;
     
-    public class DataRetrieverTests
+    public class NinjaRetrieverTests
     {
         IQueryable<Ninja> MockNinjaData;        
         Mock<DbSet<Ninja>> MockDbSet;
@@ -21,7 +21,7 @@
         Mock<DbSet<Ninja>> MockDbSetWithItems;
         Mock<INinjaContext> MockNinjaContextWithItems;
 
-        public DataRetrieverTests()
+        public NinjaRetrieverTests()
         {
             SetupTests();
         }
@@ -46,6 +46,16 @@
             Assert.Equal(3, ninjas.Count);    
         }
 
+        [Fact]
+        public void GetOne_WhenDataExists_ReturnsOneNinja()
+        {
+            var sut = new NinjaRetriever(MockNinjaContextWithItems.Object);
+
+            var ninja = sut.GetOne(1);
+
+            Assert.Equal(1, ninja.Id);
+        }
+
         private void SetupTests()
         {
             MockNinjaData = new List<Ninja>().AsQueryable();
@@ -53,24 +63,27 @@
             MockNinjaContext = new Mock<INinjaContext>();
 
             MockDbSet.As<IQueryable<Ninja>>()
-                .Setup(m => m.GetEnumerator())
-                .Returns(MockNinjaData.GetEnumerator());
+                .Setup(m => m.GetEnumerator()).Returns(MockNinjaData.GetEnumerator());
+
             MockNinjaContext
-                .Setup(c => c.Ninjas)
-                .Returns(MockDbSet.Object);
+                .Setup(c => c.Ninjas).Returns(MockDbSet.Object);
 
             MockDbSetWithItems = new Mock<DbSet<Ninja>>();
             MockNinjaContextWithItems = new Mock<INinjaContext>();
             MockNinjaDataWithItems = new List<Ninja>
             {
-                new Ninja { Name = "BBB" },
-                new Ninja { Name = "ZZZ" },
-                new Ninja { Name = "AAA" },
+                new Ninja { Id = 1, Name = "BBB" },
+                new Ninja { Id = 2, Name = "ZZZ" },
+                new Ninja { Id = 3, Name = "AAA" },
             }.AsQueryable();
 
             MockDbSetWithItems.As<IQueryable<Ninja>>()
-                .Setup(m => m.GetEnumerator())
-                .Returns(MockNinjaDataWithItems.GetEnumerator());
+                .Setup(m => m.GetEnumerator()).Returns(MockNinjaDataWithItems.GetEnumerator());
+            MockDbSetWithItems.As<IQueryable<Ninja>>()
+                .Setup(m => m.Provider).Returns(MockNinjaDataWithItems.Provider);
+            MockDbSetWithItems.As<IQueryable<Ninja>>()
+                .Setup(m => m.Expression).Returns(MockNinjaDataWithItems.Expression);            
+
             MockNinjaContextWithItems
                 .Setup(c => c.Ninjas)
                 .Returns(MockDbSetWithItems.Object);
