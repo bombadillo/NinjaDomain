@@ -22,6 +22,19 @@
 
             Assert.IsType<List<Ninja>>(result);
         }
+
+        [Fact]
+        public void GetOne_ReturnsNinja()
+        {
+            var mockDataRetriever = new Mock<IRetrieveData<Ninja>>();
+            mockDataRetriever.Setup(x => x.GetOne(It.IsAny<int>())).Returns(new Ninja());
+
+            var sut = new NinjaController(mockDataRetriever.Object);
+
+            var result = sut.Get(It.IsAny<int>());
+
+            Assert.IsType<Ninja>(result);
+        }
     }
    
 

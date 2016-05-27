@@ -23,9 +23,9 @@
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public Ninja Get(int id)
         {
-            return "value";
+            return DataRetriever.GetOne(id);
         }
 
         // POST api/values
