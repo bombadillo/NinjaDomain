@@ -7,8 +7,8 @@
     <ProjectGuid>{FF1605AE-4222-451E-8FD1-69BBC011301E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NinjaDomain.DataModel</RootNamespace>
-    <AssemblyName>NinjaDomain.DataModel</AssemblyName>
+    <RootNamespace>NinjaDomain.Data</RootNamespace>
+    <AssemblyName>NinjaDomain.Data</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contexts\INinjaContext.cs" />
     <Compile Include="Interfaces\IRetrieveData.cs" />
     <Compile Include="Migrations\201605251957395_Initial.cs" />
     <Compile Include="Migrations\201605251957395_Initial.Designer.cs">

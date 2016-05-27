@@ -4,9 +4,17 @@
 
     using Interfaces;
     using Classes;
+    using Contexts;
 
     public class NinjaRetriever : IRetrieveData<Ninja>
     {
+        private readonly INinjaContext NinjaContext;
+
+        public NinjaRetriever(INinjaContext ninjaContext)
+        {
+            NinjaContext = ninjaContext;
+        }
+
         public List<Ninja> GetAll()
         {
             var data = new List<Ninja>
