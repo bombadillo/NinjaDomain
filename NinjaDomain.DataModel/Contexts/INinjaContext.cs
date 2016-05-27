@@ -8,5 +8,7 @@
         DbSet<Ninja> Ninjas { get; set; }
         DbSet<Clan> Clans { get; set; }
         DbSet<NinjaEquipment> Equipment { get; set; }
+
+        int SaveChanges();
     }
 }

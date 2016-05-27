@@ -11,7 +11,7 @@
     using Contexts;
     using System;
     
-    public class NinjaRetrieverTests
+    public class NinjaRepositoryTests
     {
         IQueryable<Ninja> MockNinjaData;        
         Mock<DbSet<Ninja>> MockDbSet;
@@ -21,7 +21,7 @@
         Mock<DbSet<Ninja>> MockDbSetWithItems;
         Mock<INinjaContext> MockNinjaContextWithItems;
 
-        public NinjaRetrieverTests()
+        public NinjaRepositoryTests()
         {
             SetupTests();
         }
@@ -54,6 +54,16 @@
             var ninja = sut.GetOne(1);
 
             Assert.Equal(1, ninja.Id);
+        }
+
+        [Fact]
+        public void Add_OnSuccess_ReturnsTrue()
+        {
+            var sut = new NinjaRepository(MockNinjaContextWithItems.Object);
+
+            var result = sut.Add(new Ninja());
+
+            Assert.True(result);
         }
 
         private void SetupTests()

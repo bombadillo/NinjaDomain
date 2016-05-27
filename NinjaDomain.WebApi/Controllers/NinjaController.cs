@@ -29,8 +29,9 @@
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Ninja ninja)
         {
+            DataRetriever.Add(ninja);
         }
 
         // PUT api/values/5

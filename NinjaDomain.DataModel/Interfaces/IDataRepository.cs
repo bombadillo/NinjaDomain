@@ -6,5 +6,6 @@
     {
         List<T> GetAll();
         T GetOne(int id);
+        bool Add(T item);
     }
 }

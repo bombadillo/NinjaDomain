@@ -35,6 +35,18 @@
 
             Assert.IsType<Ninja>(result);
         }
+
+        [Fact]
+        public void Add_CallsRepositoryAddMethod()
+        {
+            var mockDataRetriever = new Mock<IDataRepository<Ninja>>();
+
+            var sut = new NinjaController(mockDataRetriever.Object);
+
+            sut.Post(It.IsAny<Ninja>());
+
+            mockDataRetriever.Verify(m => m.Add(It.IsAny<Ninja>()), Times.Once());
+        }
     }
    
 

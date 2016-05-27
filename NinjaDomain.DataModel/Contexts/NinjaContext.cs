@@ -8,5 +8,10 @@
         public DbSet<Ninja> Ninjas { get; set; }
         public DbSet<Clan> Clans { get; set; }
         public DbSet<NinjaEquipment> Equipment { get; set; }
+
+        public override int SaveChanges()
+        {
+            return base.SaveChanges();
+        }
     }
 }
