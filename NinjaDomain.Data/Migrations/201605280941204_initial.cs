@@ -1,9 +1,9 @@
-namespace NinjaDomain.DataModel.Migrations
+namespace NinjaDomain.Data.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -24,6 +24,7 @@ namespace NinjaDomain.DataModel.Migrations
                         Name = c.String(),
                         ServedInOniwaban = c.Boolean(nullable: false),
                         ClanId = c.Int(nullable: false),
+                        DateOfBirth = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Clans", t => t.ClanId, cascadeDelete: true)

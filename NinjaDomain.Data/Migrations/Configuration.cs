@@ -1,8 +1,11 @@
-namespace NinjaDomain.DataModel.Migrations
+namespace NinjaDomain.Data.Migrations
 {
-    using System.Data.Entity.Migrations;
     using Classes;
     using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
     internal sealed class Configuration : DbMigrationsConfiguration<NinjaDomain.Data.Contexts.NinjaContext>
     {
         public Configuration()
