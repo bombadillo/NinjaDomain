@@ -1,5 +1,6 @@
 ﻿namespace NinjaDomain.WebApi
 {
+    using Newtonsoft.Json.Serialization;
     using System.Net.Http.Headers;
     using System.Web.Http;
 
@@ -12,6 +13,7 @@
             // Web API routes
             config.MapHttpAttributeRoutes();
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
